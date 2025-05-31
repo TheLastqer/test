@@ -1,0 +1,33 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+    local Window = OrionLib:MakeWindow({Name = "FxZ Hub V1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+    local Tab = Window:MakeTab({
+        Name = "Main",
+        Icon = "",
+        PremiumOnly = false
+    })
+
+    
+Tab:AddButton({
+	Name = "INF SPINS",
+	Callback = function()
+      		print("button pressed")
+			local args = {
+	"GiveSpin",
+	999
+}
+game:GetService("ReplicatedStorage"):WaitForChild("R_Server"):FireServer(unpack(args))
+  	end    
+})
+
+Tab:AddButton({
+	Name = "GIVE BEST EGG",
+	Callback = function()
+      		print("button pressed")
+			local args = {
+	"Get_EGG",
+	"Godzilla"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("R_Server"):FireServer(unpack(args))
+  	end    
+})
